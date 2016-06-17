@@ -7,7 +7,7 @@ angular
           templateUrl: 'js/components/desktop/desktop.tpl.html',
           controllerAs: 'desktopCtrl',
           scope: {
-
+            metadata: '='
           }
 
       };

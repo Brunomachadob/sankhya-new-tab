@@ -1,40 +1,33 @@
 angular
   .module('SnkNewTab')
-  .controller('DesktopController', [function() {
+  .controller('DesktopController', ['$scope', function($scope) {
     var self = this;
+
+    self.editionMode = false;
+
+    self.toggleEditionMode = toggleEditionMode;
 
     self.models = {
         selected: null,
         templates: [
-            {type: "widget", "name": "labelWidget", "data": "Outro label", id: 2},
-            {type: "container", id: 2, columns: [[], []]}
+            {type: "widget", "name": "labelWidget", label:"label", "data": "Outro label"},
+            {type: "widget", "name": "clockWidget", label:"clock"},
+            {type: "container", label: "container", id: 2, columns: [[], []]}
         ],
         dropzones: {
-            "A": [
-                {
-                    "type": "container",
-                    "id": 1,
-                    "columns": [
-                        [
-                            {
-                                "type": "widget",
-                                "name": "labelWidget",
-                                "data": "um label"
-                            },
-                            {
-                                "type": "widget",
-                                "name": "clockWidget",
-                                "data": {}
-                            }
-                        ],
-                        [{
-                            "type": "widget",
-                            "name": "labelWidget",
-                            "data": "Outro label"
-                        }]
-                    ]
-                }
-            ]
+            "A": []
         }
     };
+
+    init();
+
+    function init() {
+      $scope.$watch('metadata', function(newMD) {
+        self.models.dropzones['A'] = newMD;
+      });
+    }
+
+    function toggleEditionMode() {
+      self.editionMode = !self.editionMode;
+    }
    }]);

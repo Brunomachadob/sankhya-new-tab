@@ -1,6 +1,6 @@
 angular
   .module('SnkNewTab')
-  .controller('HomeController', ['$interval', 'NotificationService', function($interval, NotificationService) {
+  .controller('HomeController', ['$interval', '$timeout', 'NotificationService', function($interval, $timeout, NotificationService) {
     var self = this;
 
     self.showNotification = showNotification;
@@ -8,7 +8,37 @@ angular
     init();
 
     function init() {
-      setupClock();
+      setupDesktopMD();
+    }
+
+    function setupDesktopMD() {
+      $timeout(function() { //Só pra simular uma carga assíncrona
+        self.desktopMD = [
+            {
+                "type": "container",
+                "id": 1,
+                "columns": [
+                    [
+                        {
+                            "type": "widget",
+                            "name": "labelWidget",
+                            "data": "um label"
+                        },
+                        {
+                            "type": "widget",
+                            "name": "clockWidget",
+                            "data": {}
+                        }
+                    ],
+                    [{
+                        "type": "widget",
+                        "name": "labelWidget",
+                        "data": "Outro label"
+                    }]
+                ]
+            }
+        ];
+      }, 1000);
     }
 
     function showNotification() {
@@ -20,18 +50,5 @@ angular
       }).then(function(notification) {
         console.log(notification);
       });
-    }
-
-    function setupClock() {
-      self.clock = {
-        time: Date.now(),
-        hourFormat: 'HH:mm:ss',
-        dateFormat: 'dd/MM/yyyy',
-        interval: 1000
-      };
-
-      $interval(function () {
-        self.clock.time = Date.now();
-      }, self.clock.interval);
     }
   }]);
