@@ -1,6 +1,6 @@
 angular
   .module('SnkNewTab')
-  .directive('dashWidgetError', [function() {
+  .directive('desktopWidgetError', [function() {
       return {
           restrict: 'E',
           template: '<div class="item" ng-bind="data.message"></div>',
@@ -8,5 +8,4 @@ angular
             data: '='
           }
       };
-
    }]);

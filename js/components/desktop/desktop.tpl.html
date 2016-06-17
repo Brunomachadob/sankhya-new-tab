@@ -1,7 +1,7 @@
 <div class="row dashboard-container">
   <div class="col-sm-10">
       <div class="row">
-          <div ng-repeat="(zone, list) in dashCtrl.models.dropzones" class="col-md-12">
+          <div ng-repeat="(zone, list) in desktopCtrl.models.dropzones" class="col-md-12">
               <div class="dropzone box box-yellow">
                   <div ng-include="'list.html'"></div>
               </div>
@@ -16,7 +16,7 @@
           <ul>
               <!-- The toolbox only allows to copy objects, not move it. After a new
                    element was created, dnd-copied is invoked and we generate the next id -->
-              <li ng-repeat="item in dashCtrl.models.templates"
+              <li ng-repeat="item in desktopCtrl.models.templates"
                   dnd-draggable="item"
                   dnd-effect-allowed="copy"
                   dnd-copied="item.id = item.id + 1"
@@ -26,10 +26,10 @@
           </ul>
       </div>
 
-      <div ng-if="dashCtrl.models.selected" class="box box-grey box-padding">
+      <div ng-if="desktopCtrl.models.selected" class="box box-grey box-padding">
           <h3>Selected</h3>
-          <strong>Type: </strong> {{dashCtrl.models.selected.type}}<br>
-          <input type="text" ng-model="dashCtrl.models.selected.id" class="form-control" style="margin-top: 5px" />
+          <strong>Type: </strong> {{desktopCtrl.models.selected.type}}<br>
+          <input type="text" ng-model="desktopCtrl.models.selected.id" class="form-control" style="margin-top: 5px" />
       </div>
 
       <div class="trashcan box box-grey box-padding">
@@ -47,8 +47,8 @@
             dnd-draggable="item"
             dnd-effect-allowed="move"
             dnd-moved="list.splice($index, 1)"
-            dnd-selected="dashCtrl.models.selected = item"
-            ng-class="{selected: dashCtrl.models.selected === item}"
+            dnd-selected="desktopCtrl.models.selected = item"
+            ng-class="{selected: desktopCtrl.models.selected === item}"
             ng-include="item.type + '.html'">
         </li>
     </ul>
@@ -66,6 +66,6 @@
 
 <!-- Template for a normal list item -->
 <script type="text/ng-template" id="widget.html">
-    <dash-widget widget-md="item">
-    </dash-widget>
+    <desktop-widget widget-md="item">
+    </desktop-widget>
 </script>

@@ -1,9 +1,9 @@
 angular
   .module('SnkNewTab')
-  .directive('dashWidget', ['$injector', 'AngularUtils', function($injector, AngularUtils) {
+  .directive('desktopWidget', ['$injector', 'AngularUtils', function($injector, AngularUtils) {
       return {
           restrict: 'E',
-          require: '^dashboard',
+          require: '^desktop',
           scope: {
             widgetMd: '='
           },
@@ -27,7 +27,7 @@ angular
                 throw new Error('Widget \'' + widgetName + '\' não disponível.')
               }
             } catch(error) {
-              widgetName = 'dashWidgetError';
+              widgetName = 'desktopWidgetError';
               widgetData = error;
             }
 

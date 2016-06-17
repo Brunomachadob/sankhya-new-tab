@@ -1,6 +1,6 @@
 angular
   .module('SnkNewTab')
-  .controller('DashboardController', [function() {
+  .controller('DesktopController', [function() {
     var self = this;
 
     self.models = {

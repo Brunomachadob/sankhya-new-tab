@@ -2,19 +2,22 @@
 
 Extensão de Nova Guia para o Chrome.
 
-A idéia é disponibilizar um framework para desenvolvimento de widgets,
-que podem ser icorporados a nova guia e então cada um conseguir selecionar
-e organizar os widgets que deseja em sua página.
+```
+Esta extensão não tem vínculo algum com o Sankhya-W.
+```
 
+A idéia é disponibilizar uma nova guia para os colaboradores da Sankhya,
+onde qualquer um pode criar widgets e depois utilizá-los.
+Os widgets podem ser relógios, apps de TODO, notas, ou até buscar informações quaisquer do próprio Sankhya-W.
 
 ### Componentes já desenvolvidos ###
 
-> Dashboard
+> Desktop
 
-A página principal contém um dashboard, componente responsável
+A página principal contém um desktop, componente responsável
 por apresentar e organizar os itens na tela. Ele iniciará e gerenciará os widgets da tela.
 
-> DashWidget
+> DesktopWidget
 
 Este é o wrapper de um widget, este é o componente que irá pegar os metadados de um widget e instanciá-lo.
 
@@ -29,11 +32,11 @@ Este foi o segundo widget criado, é um relógio digital.
 ### Roadmap ###
 (Não necessáriamente nesta ordem)
 
-* Criar um mecanismo de build e deploy da extensão, com minificação, gerenciamento de dependencias, documentação, etc.
+* Criar um mecanismo de build e deploy da extensão, com minificação, gerenciamento de dependencias, etc.
 * Criar um sistema de configuração do widget.
 * Planejar melhor o design da aplicação, até então só planejei parte da arquitetura.
 * Criar um mecanismo de build e deploy da extensão, com minificação, gerenciamento de dependencias, etc.
-* Atualmente o projeto aceita apenas widgets criados dentro do próprio projeto, precisamos criar um mecanismo de upload de widget customizados por qualquer um. E então criar um sistema de publicação destes widgets na plataforma para que todos possam utilizar widgets criados por outros.(Talvez carregar via git, cada extensão pode ser baixada e fica em memória, caso perca o download é feito novamente, assim até poderia existir um mecanismo de updates de widget, assim como o Brackets trabalha)
+* Atualmente o projeto aceita apenas widgets criados dentro do próprio projeto, precisamos criar um mecanismo de upload de widget customizados por qualquer um. E então criar um sistema de publicação destes widgets na plataforma para que todos possam utilizar widgets criados por outros.
 
 ### Instalação ###
 
