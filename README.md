@@ -18,6 +18,14 @@ por apresentar e organizar os itens na tela. Ele iniciará e gerenciará os widg
 
 Este é o wrapper de um widget, este é o componente que irá pegar os metadados de um widget e instanciá-lo.
 
+> labelWidget
+
+Este foi o primeiro widget criado, é apenas um label.
+
+> clocklWidget
+
+Este foi o segundo widget criado, é um relógio digital.
+
 ### Roadmap ###
 (Não necessáriamente nesta ordem)
 
