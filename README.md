@@ -17,10 +17,6 @@ Os widgets podem ser relógios, apps de TODO, notas, ou até buscar informaçõe
 A página principal contém um desktop, componente responsável
 por apresentar e organizar os itens na tela. Ele iniciará e gerenciará os widgets da tela.
 
-> DesktopWidget
-
-Este é o wrapper de um widget, este é o componente que irá pegar os metadados de um widget e instanciá-lo.
-
 > LabelWidget
 
 Este foi o primeiro widget criado, é apenas um label.
