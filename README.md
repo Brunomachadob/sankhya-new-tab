@@ -29,11 +29,11 @@ Este foi o segundo widget criado, é um relógio digital.
 ### Roadmap ###
 (Não necessáriamente nesta ordem)
 
-* Criar um mecanismo de build e deploy da extensão, com minificação, gerenciamento de dependencias, etc.
+* Criar um mecanismo de build e deploy da extensão, com minificação, gerenciamento de dependencias, documentação, etc.
 * Criar um sistema de configuração do widget.
 * Planejar melhor o design da aplicação, até então só planejei parte da arquitetura.
 * Criar um mecanismo de build e deploy da extensão, com minificação, gerenciamento de dependencias, etc.
-* Atualmente o projeto aceita apenas widgets criados dentro do próprio projeto, precisamos criar um mecanismo de upload de widget customizados por qualquer um. E então criar um sistema de publicação destes widgets na plataforma para que todos possam utilizar widgets criados por outros.
+* Atualmente o projeto aceita apenas widgets criados dentro do próprio projeto, precisamos criar um mecanismo de upload de widget customizados por qualquer um. E então criar um sistema de publicação destes widgets na plataforma para que todos possam utilizar widgets criados por outros.(Talvez carregar via git, cada extensão pode ser baixada e fica em memória, caso perca o download é feito novamente, assim até poderia existir um mecanismo de updates de extensão)
 
 ### Instalação ###
 
