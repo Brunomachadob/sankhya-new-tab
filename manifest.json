@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "SnkNewTab",
+  "description": "Extensão de nova aba do Chrome para a Sankhya",
+  "version": "0.1",
+  "permissions": [],
+  "background": {
+    "scripts": ["vendor/angular/angular.min.js"]
+  },
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  }
+}

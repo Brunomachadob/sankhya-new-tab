@@ -1,0 +1,56 @@
+<!doctype html>
+<html ng-app="SnkNewTab" ng-csp="">
+<head>
+  <meta charset="UTF-8">
+  <title>Sankhya New Tab</title>
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.paper.theme.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+
+  <div class="container view-animate-container" ng-class="animation">
+    <div class="view-animate" ng-view></div>
+  </div>
+
+  <footer class="footer">
+    <div class="action-bar">
+      <ul class="nav-bar list-inline" nav-bar>
+        <li><a class="glyphicon glyphicon-home" href="#/"></a></li>
+        <li><a class="glyphicon glyphicon-list" href="#/settings"></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="./vendor/jquery/jquery-3.0.0.min.js"></script>
+
+  <script src="./vendor/angular/angular.min.js"></script>
+  <script src="./vendor/angular/angular-animate.min.js"></script>
+  <script src="./vendor/angular/angular-route.min.js"></script>
+
+  <script src="./vendor/angular-dnd/angular-dnd.min.js"></script>
+
+  <script src="./js/app.module.js"></script>
+  <script src="./js/notification.service.js"></script>
+  <script src="./js/home.controller.js"></script>
+  <script src="./js/settings.controller.js"></script>
+
+  <!-- UTILS -->
+  <script src="./js/util/angularutils.service.js"></script>
+
+  <!-- COMPONENTS -->
+  <script src="./js/components/navbar.directive.js"></script>
+  <script src="./js/components/dashboard/dashboard.controller.js"></script>
+  <script src="./js/components/dashboard/dashboard.directive.js"></script>
+  <script src="./js/components/dashboard/dashwidget.directive.js"></script>
+  <script src="./js/components/dashboard/errorwidget.directive.js"></script>
+
+  <!-- WIDGETS -->
+  <script src="./js/components/widget/labelwidget/labelwidget.directive.js"></script>
+
+  <script src="./js/components/widget/clockwidget/clockwidget.directive.js"></script>
+  <script src="./js/components/widget/clockwidget/clockwidget.controller.js"></script>
+</body>
+</html>

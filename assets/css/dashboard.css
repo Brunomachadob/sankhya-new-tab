@@ -1,0 +1,97 @@
+.dashboard-container ul[dnd-list],
+.dashboard-container ul[dnd-list] > li {
+	position: relative;
+}
+
+.dashboard-container .dropzone ul[dnd-list] {
+    min-height: 42px;
+    margin: 0px;
+    padding-left: 0px;
+}
+
+.dashboard-container .dropzone li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: block;
+    padding: 0px;
+}
+
+.dashboard-container .dropzone .dndDragging {
+    opacity: 0.7;
+}
+
+.dashboard-container .dropzone .dndDraggingSource {
+    display: none;
+}
+
+.dashboard-container .dropzone .dndPlaceholder {
+    background-color: #ddd;
+    min-height: 42px;
+    display: block;
+    position: relative;
+}
+
+.dashboard-container .dropzone .selected .item {
+    color: #3c763d;
+    background-color: #dff0d8;
+}
+
+.dashboard-container .dropzone .selected .box {
+    border-color: #d6e9c6;
+}
+
+.dashboard-container .dropzone .selected .box > h3 {
+    color: #3c763d;
+    background-color: #dff0d8;
+    background-image: linear-gradient(to bottom,#dff0d8 0,#d0e9c6 100%);
+    border-color: #d6e9c6;
+}
+
+.dashboard-container .dropzone .item {
+    padding: 10px 15px;
+}
+
+.dashboard-container .dropzone .container-element {
+    margin: 10px;
+}
+
+.dashboard-container .dropzone .container-element .column {
+    float: left;
+    width: 50%;
+}
+
+.dashboard-container .toolbox ul {
+    list-style: none;
+    padding-left: 0px;
+    cursor: move;
+}
+
+.dashboard-container .toolbox button {
+    margin: 5px;
+    width: 123px;
+    opacity: 1.0;
+}
+
+.dashboard-container .toolbox .dndDragging {
+    opacity: 0.5;
+}
+
+.dashboard-container .toolbox .dndDraggingSource {
+    opacity: 1.0;
+}
+
+.dashboard-container .trashcan ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.dashboard-container .trashcan img {
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.dashboard-container .trashcan .dndPlaceholder {
+    display: none;
+}

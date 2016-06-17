@@ -1,0 +1,92 @@
+/* Include this file in your html if you are using the CSP mode. */
+
+@charset "UTF-8";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+.ng-animate-shim {
+  visibility:hidden;
+}
+
+.ng-anchor {
+  position:absolute;
+}
+
+/*
+http://www.colorcombos.com/color-schemes/2608/ColorCombo2608.html
+*/
+
+body {
+  transition: background-color 0.5s ease;
+  margin: 0;
+  padding: 0;
+}
+
+body.home {
+  background-color: #6699CC;
+}
+
+body.settings {
+  background-color: #6666CC;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 65px;
+}
+.action-bar {
+  float: right;
+  margin-top: 20px;
+  margin-right: 25px;
+}
+
+.action-bar .list-inline a {
+  color: #333;
+  font-size: 25px;
+}
+
+.action-bar .list-inline li.active a {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.white-text {
+  color: #FFF;
+}
+
+.clock {
+  text-align: center;
+}
+
+.clock .time {
+  font-size: 11em;
+  margin: 0;
+  padding: 0;
+  line-height: 0.8;
+  font-weight: bold;
+}
+
+.clock .time.minutes {
+  font-size: 8em;
+  font-weight: normal;
+}
+
+.clock .time.seconds {
+  font-size: 2em;
+  font-weight: normal;
+}
+
+.clock .date {
+  margin: 5px;
+  font-size: 2em;
+}

@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-sm-12 center-block">
+    <div class="clock">
+      <h1 class="time" ng-bind="clockCtrl.clock.time | date:'HH'"></h1>
+      <div>
+        <span class="time minutes" ng-bind="clockCtrl.clock.time | date:'mm'"></span>
+        <span class="time seconds" ng-bind="clockCtrl.clock.time | date:'ss'"></span>
+      </div>
+      <h3 class="date" ng-bind="clockCtrl.clock.time | date:clockCtrl.clock.dateFormat"></h3>
+    </div>
+  </div>
+</div>
