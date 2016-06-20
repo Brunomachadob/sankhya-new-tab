@@ -19,7 +19,7 @@ angular
                 return $location.path();
               }, function(newPath) {
                   $tabs.removeClass("active");
-                  tabMap[newPath].addClass("active");
+                  tabMap[newPath] && tabMap[newPath].addClass("active");
               });
           }
 

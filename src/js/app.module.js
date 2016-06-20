@@ -1,5 +1,5 @@
 angular
-  .module('SnkNewTab', ['ngRoute', 'ngAnimate', 'dndLists'])
+  .module('SnkNewTab', ['ngRoute', 'ngAnimate', 'dndLists', 'SnkNewTab.widgets', 'SnkNewTab.templates'])
   .config(['$routeProvider', function($routeProvider) {
       $routeProvider
         .when('/', {

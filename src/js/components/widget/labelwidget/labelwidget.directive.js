@@ -1,5 +1,5 @@
 angular
-  .module('SnkNewTab')
+  .module('SnkNewTab.widgets')
   .directive('labelWidget', [function() {
       return {
           restrict: 'E',

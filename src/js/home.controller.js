@@ -1,6 +1,6 @@
 angular
   .module('SnkNewTab')
-  .controller('HomeController', ['$interval', '$timeout', 'NotificationService', function($interval, $timeout, NotificationService) {
+  .controller('HomeController', ['$interval', '$timeout', '$injector', 'NotificationService', function($interval, $timeout, $compileProvider, NotificationService) {
     var self = this;
 
     self.showNotification = showNotification;

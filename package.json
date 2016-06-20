@@ -1,0 +1,32 @@
+{
+  "name": "sankhya-new-tab",
+  "moduleName": "SnkNewTab",
+  "version": "1.0.0",
+  "description": "Extensão de Nova Guia para o Chrome.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brunomachadob/sankhya-new-tab.git"
+  },
+  "author": "Bruno Machado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brunomachadob/sankhya-new-tab/issues"
+  },
+  "homepage": "https://github.com/Brunomachadob/sankhya-new-tab#readme",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-html2js": "^0.3.6"
+  }
+}

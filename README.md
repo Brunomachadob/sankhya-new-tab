@@ -31,14 +31,25 @@ Este foi o segundo widget criado, é um relógio digital.
 * Criar um mecanismo de build e deploy da extensão, com minificação, gerenciamento de dependencias, etc.
 * Criar um sistema de configuração do widget.
 * Planejar melhor o design da aplicação, até então só planejei parte da arquitetura.
-* Criar um mecanismo de build e deploy da extensão, com minificação, gerenciamento de dependencias, etc.
 * Atualmente o projeto aceita apenas widgets criados dentro do próprio projeto, precisamos criar um mecanismo de upload de widget customizados por qualquer um. E então criar um sistema de publicação destes widgets na plataforma para que todos possam utilizar widgets criados por outros.
 
 ### Instalação ###
 
-A instalação em modo de desenvolvimento é bem simples.
+Após clonar o repositório, entre na pasta do projeto e instale as dependencias com:
+```
+npm install
+```
+
+Então, rode o comando de build do projeto:
+```
+grunt
+```
+
+Então será criada a pasta **dir** com a extensão pronta para uso.
+
+Para adicioná-la ao chrome:
 
 * Acesse 'chrome://extensions'.
 * Marque a opção Modo do desenvolvedor.
 * Clique no botão "Carregar extensão expandida" e selecione a pasta raiz do projeto.
-* Agora o chrome já carregou a extensão e qualquer modificação nos fontes basta dar um F5 no chrome e estará atualizado.
+* Agora o chrome já carregou a extensão e qualquer modificação nos fontes basta dar um F5 no chrome e estará atualizado (O comando **grunt** realiza a compilação e já instancia um watcher nos arquivos do projeto, assim qualquer alteração nestes a extensão é recompilada).
