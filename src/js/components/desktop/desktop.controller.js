@@ -4,8 +4,7 @@ angular
     var self = this;
 
     self.editionMode = false;
-
-    self.toggleEditionMode = toggleEditionMode;
+    self.desktopChanged = false;
 
     self.models = {
         templates: [],
@@ -13,6 +12,9 @@ angular
             "A": []
         }
     };
+
+    self.toggleEditionMode = toggleEditionMode;
+    self.onDesktopChange = onDesktopChange;
 
     init();
 
@@ -29,7 +31,19 @@ angular
         self.models.templates.push({type: "container", label: "container", id: 2, columns: [[], []]});
     }
 
+    function onDesktopChange() {
+      self.desktopChanged = true;
+    }
+
     function toggleEditionMode() {
       self.editionMode = !self.editionMode;
+
+      if (!self.editionMode) {
+        if (self.desktopChanged) {
+          $scope.save({metadata: self.models.dropzones.A});
+
+          self.desktopChanged = false;
+        }
+      }
     }
    }]);

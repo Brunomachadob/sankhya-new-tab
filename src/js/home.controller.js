@@ -1,9 +1,12 @@
 angular
   .module('SnkNewTab')
-  .controller('HomeController', ['$interval', '$timeout', '$injector', 'NotificationService', function($interval, $timeout, $compileProvider, NotificationService) {
+  .controller('HomeController', ['$interval', '$timeout', '$injector', 'NotificationService', 'localStorageService', function($interval, $timeout, $compileProvider, NotificationService, localStorageService) {
     var self = this;
 
+    var STORAGE_KEY = 'desktop-md';
+
     self.showNotification = showNotification;
+    self.save = save;
 
     init();
 
@@ -11,34 +14,44 @@ angular
       setupDesktopMD();
     }
 
+    function save(metadata) {
+      localStorageService.set(STORAGE_KEY, metadata);
+    }
+
     function setupDesktopMD() {
-      $timeout(function() { //Só pra simular uma carga assíncrona
-        self.desktopMD = [
-            {
-                "type": "container",
-                "id": 1,
-                "columns": [
-                    [
-                        {
-                            "type": "widget",
-                            "name": "labelWidget",
-                            "data": "um label"
-                        },
-                        {
-                            "type": "widget",
-                            "name": "clockWidget",
-                            "data": {}
-                        }
-                    ],
-                    [{
-                        "type": "widget",
-                        "name": "labelWidget",
-                        "data": "Outro label"
-                    }]
-                ]
-            }
-        ];
-      }, 1000);
+        self.desktopMD = localStorageService.get(STORAGE_KEY);
+
+        if (!self.desktopMD) {
+          self.desktopMD = getDefaultDesktopMD();
+        }
+    }
+
+    function getDefaultDesktopMD() {
+      return [
+          {
+              "type": "container",
+              "id": 1,
+              "columns": [
+                  [
+                      {
+                          "type": "widget",
+                          "name": "labelWidget",
+                          "data": "um label"
+                      },
+                      {
+                          "type": "widget",
+                          "name": "clockWidget",
+                          "data": {}
+                      }
+                  ],
+                  [{
+                      "type": "widget",
+                      "name": "labelWidget",
+                      "data": "Outro label"
+                  }]
+              ]
+          }
+      ];
     }
 
     function showNotification() {

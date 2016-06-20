@@ -41,7 +41,7 @@
             <h3 class="panel-title">Lixeira</h3>
           </div>
           <div class="panel-body">
-            <ul dnd-list="[]">
+            <ul dnd-list="[]" dnd-inserted="desktopCtrl.onDesktopChange()">
                 <!-- If you use [] as referenced list, the dropped elements will be lost -->
                 <li><i class="glyphicon glyphicon-trash"></i></li>
             </ul>
@@ -52,9 +52,10 @@
 </div>
 
 <script type="text/ng-template" id="list.html">
-    <ul dnd-list="list">
+    <ul dnd-list="list" dnd-inserted="desktopCtrl.onDesktopChange()">
         <li ng-repeat="item in list"
             dnd-draggable="item"
+            dnd-disable-if="!desktopCtrl.editionMode"
             dnd-effect-allowed="move"
             dnd-moved="list.splice($index, 1)"
             ng-include="item.type + '.html'">
