@@ -1,5 +1,5 @@
 angular
-  .module('SnkNewTab')
+  .module('SnkNewTab.widgets')
   .directive('clockWidget', [function() {
       return {
           restrict: 'E',

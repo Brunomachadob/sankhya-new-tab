@@ -1,6 +1,10 @@
 angular
-  .module('SnkNewTab', ['ngRoute', 'ngAnimate', 'dndLists'])
-  .config(['$routeProvider', function($routeProvider) {
+  .module('SnkNewTab', ['ngRoute', 'ngAnimate', 'LocalStorageModule', 'dndLists', 'SnkNewTab.widgets', 'SnkNewTab.templates'])
+  .config(['$routeProvider', 'localStorageServiceProvider', function($routeProvider, localStorageServiceProvider) {
+    localStorageServiceProvider
+        .setPrefix('SnkNewTab')
+        .setNotify(false, false);
+
       $routeProvider
         .when('/', {
           bodyClass: 'home',

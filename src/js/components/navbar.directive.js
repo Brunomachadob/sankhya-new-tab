@@ -19,7 +19,9 @@ angular
                 return $location.path();
               }, function(newPath) {
                   $tabs.removeClass("active");
-                  tabMap[newPath].addClass("active");
+                  if (tabMap[newPath]) {
+                    tabMap[newPath].addClass("active");
+                  }
               });
           }
 

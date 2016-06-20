@@ -21,7 +21,7 @@ angular
 
         if (requiredControllers) {
             angular.forEach(requiredControllers, function (controller, controllerName) {
-                element['data']('$' + controllerName + 'Controller', controller);
+                element.data('$' + controllerName + 'Controller', controller);
             });
         }
 

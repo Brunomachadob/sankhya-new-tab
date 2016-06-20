@@ -1,5 +1,5 @@
 angular
-  .module('SnkNewTab')
+  .module('SnkNewTab.widgets')
   .controller('ClockWidgetController', ['$interval', function($interval) {
     var self = this;
 

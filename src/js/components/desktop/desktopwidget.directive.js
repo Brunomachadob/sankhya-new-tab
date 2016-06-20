@@ -1,6 +1,6 @@
 angular
   .module('SnkNewTab')
-  .directive('desktopWidget', ['$injector', 'AngularUtils', function($injector, AngularUtils) {
+  .directive('desktopWidget', ['$injector', 'AngularUtils', 'WidgetService', function($injector, AngularUtils, WidgetService) {
       return {
           restrict: 'E',
           require: '^desktop',
@@ -12,20 +12,12 @@ angular
             var widgetData;
 
             try {
-              if (!scope.widgetMd) {
-                throw new Error('dashWidget sem metadados');
-              }
-
-              if (!scope.widgetMd.name) {
-                throw new Error('dashWidget sem nome de widget');
-              }
+              WidgetService.validateWidgetMD(scope.widgetMd);
 
               widgetName = scope.widgetMd.name;
               widgetData = scope.widgetMd.data;
 
-              if (!$injector.has(widgetName + 'Directive')) {
-                throw new Error('Widget \'' + widgetName + '\' não disponível.')
-              }
+              WidgetService.ensureWidgetExists(widgetName);
             } catch(error) {
               widgetName = 'desktopWidgetError';
               widgetData = error;
