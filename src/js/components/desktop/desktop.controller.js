@@ -7,10 +7,9 @@ angular
     self.desktopChanged = false;
 
     self.models = {
+        dropzoneIndex: 0,
         templates: [],
-        dropzones: {
-            "A": []
-        }
+        dropzones: []
     };
 
     self.toggleEditionMode = toggleEditionMode;
@@ -20,7 +19,7 @@ angular
 
     function init() {
       $scope.$watch('metadata', function(newMD) {
-        self.models.dropzones.A = newMD;
+        self.models.dropzones = newMD;
       });
 
       WidgetService.getLocalWidgets()
@@ -40,7 +39,7 @@ angular
 
       if (!self.editionMode) {
         if (self.desktopChanged) {
-          $scope.save({metadata: self.models.dropzones.A});
+          $scope.save({metadata: self.models.dropzones});
 
           self.desktopChanged = false;
         }

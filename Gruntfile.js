@@ -101,7 +101,7 @@ module.exports = function(grunt) {
       after: ['<%= distTemp %>']
     },
     watch: {
-      files: ['<%= jshint.files %>', 'src/**/*.tpl.html', 'index.html'],
+      files: ['<%= jshint.files %>', 'src/**/*.tpl.html', 'src/**/*.less', 'index.html'],
       tasks: ['default']
     }
   });

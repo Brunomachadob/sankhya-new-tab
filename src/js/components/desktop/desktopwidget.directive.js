@@ -15,7 +15,7 @@ angular
               WidgetService.validateWidgetMD(scope.widgetMd);
 
               widgetName = scope.widgetMd.name;
-              widgetData = scope.widgetMd.data;
+              widgetData = angular.extend({}, scope.widgetMd.defaultData, scope.widgetMd.data);
 
               WidgetService.ensureWidgetExists(widgetName);
             } catch(error) {

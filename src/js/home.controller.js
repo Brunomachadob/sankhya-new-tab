@@ -28,6 +28,7 @@ angular
 
     function getDefaultDesktopMD() {
       return [
+        [
           {
               "type": "container",
               "id": 1,
@@ -51,7 +52,15 @@ angular
                   }]
               ]
           }
-      ];
+      ],
+      [
+        {
+            "type": "widget",
+            "name": "clockWidget",
+            "data": {}
+        }
+      ]
+    ];
     }
 
     function showNotification() {
