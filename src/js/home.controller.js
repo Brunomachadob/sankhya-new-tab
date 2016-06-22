@@ -16,6 +16,7 @@ angular
 
     function save(metadata) {
       localStorageService.set(STORAGE_KEY, metadata);
+      console.info('Desktop salvo!');
     }
 
     function setupDesktopMD() {
@@ -28,39 +29,23 @@ angular
 
     function getDefaultDesktopMD() {
       return [
-        [
-          {
-              "type": "container",
-              "id": 1,
-              "columns": [
-                  [
-                      {
-                          "type": "widget",
-                          "name": "labelWidget",
-                          "data": "um label"
-                      },
-                      {
-                          "type": "widget",
-                          "name": "clockWidget",
-                          "data": {}
-                      }
-                  ],
-                  [{
-                      "type": "widget",
-                      "name": "labelWidget",
-                      "data": "Outro label"
-                  }]
-              ]
-          }
-      ],
-      [
-        {
-            "type": "widget",
-            "name": "clockWidget",
-            "data": {}
-        }
-      ]
-    ];
+         [
+            {
+               "name":"labelWidget",
+               "type":"widget"
+            },
+            {
+               "name":"clockWidget",
+               "type":"widget"
+            }
+         ],
+         [
+            {
+               "type":"widget",
+               "name":"clockWidget"
+            }
+         ]
+      ];
     }
 
     function showNotification() {

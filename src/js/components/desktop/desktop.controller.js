@@ -14,20 +14,51 @@ angular
 
     self.toggleEditionMode = toggleEditionMode;
     self.onDesktopChange = onDesktopChange;
+    self.widgetDataUpdated = widgetDataUpdated;
 
     init();
 
     function init() {
       $scope.$watch('metadata', function(newMD) {
-        self.models.dropzones = newMD;
+        metadataUpdated(newMD);
       });
 
       WidgetService.getLocalWidgets()
         .forEach(function(widgetMD) {
-          self.models.templates.push(angular.extend(widgetMD, {type: 'widget', data: 'Label'}));
+          self.models.templates.push(angular.extend(widgetMD, {type: 'widget'}));
         });
 
         self.models.templates.push({type: "container", label: "container", id: 2, columns: [[], []]});
+    }
+
+    function metadataUpdated(newMD) {
+      if (newMD) {
+        newMD = angular.copy(newMD);
+
+        metadataIterator(newMD, function(widget) {
+          WidgetService.populateRuntimeData(widget);
+        });
+
+        self.models.dropzones = newMD;
+      } else {
+        self.models.dropzones = [];
+      }
+    }
+
+    function metadataIterator(metadata, widgetHandler) {
+      if (angular.isArray(metadata)) {
+        metadata.forEach(function(item){
+          metadataIterator(item, widgetHandler);
+        });
+      } else if (angular.isObject(metadata)) {
+        if (metadata.type == 'widget') {
+          widgetHandler(metadata);
+        } else if (metadata.type == 'container') {
+          metadataIterator(metadata.columns, widgetHandler);
+        } else {
+          throw Error('Metadado com tipo inválido: ' + metadata.type);
+        }
+      }
     }
 
     function onDesktopChange() {
@@ -39,10 +70,23 @@ angular
 
       if (!self.editionMode) {
         if (self.desktopChanged) {
-          $scope.save({metadata: self.models.dropzones});
-
+          saveMetadata();
           self.desktopChanged = false;
         }
       }
+    }
+
+    function saveMetadata() {
+      var metadata = angular.copy(self.models.dropzones);
+
+      metadataIterator(metadata, function(widget) {
+        WidgetService.clearRuntimeData(widget);
+      });
+
+      $scope.save({metadata: metadata});
+    }
+
+    function widgetDataUpdated(widgetMd) {
+      saveMetadata();
     }
    }]);

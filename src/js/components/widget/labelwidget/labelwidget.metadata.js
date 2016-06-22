@@ -5,6 +5,7 @@ angular
     label: "Label",
     author: "Bruno Machado",
     defaultData: {
-      outroLabel: 'Label default'
-    }
+      label: 'Label default'
+    },
+    config: 'labelWidgetConfig'
   });

@@ -3,7 +3,7 @@ angular
   .directive('labelWidget', [function() {
       return {
           restrict: 'E',
-          template: '<div class="item" ng-bind="data.outroLabel"></div>',
+          templateUrl: 'js/components/widget/labelwidget/labelwidget.tpl.html',
           scope: {
             data: '='
           }
