@@ -93,10 +93,13 @@ angular
 
       widget.config = widgetMd.config;
       widget.thumbnail = widgetMd.thumbnail;
+
+      return widget;
     }
 
     function clearRuntimeData(widget) {
       delete widget.config;
       delete widget.thumbnail;
+      delete widget.label;
     }
   }]);

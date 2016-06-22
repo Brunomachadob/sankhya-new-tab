@@ -25,17 +25,21 @@ angular
 
       WidgetService.getLocalWidgets()
         .forEach(function(widgetMD) {
-          self.models.templates.push(angular.extend(widgetMD, {type: 'widget'}));
+          self.models.templates.push(WidgetService.populateRuntimeData({
+            type: 'widget',
+            label: widgetMD.label || widgetMD.name,
+            name: widgetMD.name
+          }));
         });
 
-        self.models.templates.push({type: "container", label: "container", id: 2, columns: [[], []]});
+        self.models.templates.push({type: "container", label: "container", columns: [[], []]});
     }
 
     function metadataUpdated(newMD) {
       if (newMD) {
         newMD = angular.copy(newMD);
 
-        metadataIterator(newMD, function(widget) {
+        metadataIterator(newMD, function widgetHandler(widget) {
           WidgetService.populateRuntimeData(widget);
         });
 
