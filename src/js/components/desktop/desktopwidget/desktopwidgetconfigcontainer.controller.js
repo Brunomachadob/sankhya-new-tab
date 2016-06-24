@@ -21,7 +21,7 @@ angular
     }
 
     function getWidget() {
-      var widgetName = AngularUtils.toDashCase(widgetMd.config);
+      var widgetName = AngularUtils.toDashCase(widgetMd.configDirective);
       return AngularUtils.createDirective(widgetName, {'data': 'widgetMd.data'}, $scope.$new());
     }
 

@@ -3,9 +3,10 @@
   "name": "SnkNewTab",
   "description": "Extensão de nova aba do Chrome para a Sankhya",
   "version": "0.1",
-  "permissions": [],
+  "permissions": ["alarms"],
   "background": {
-    "scripts": ["vendor/angular/angular.min.js"]
+    "scripts": ["vendor/angular/angular.min.js", "background.js"],
+    "persistent": false
   },
   "content_security_policy": "script-src 'self'; object-src 'self'",
   "chrome_url_overrides" : {

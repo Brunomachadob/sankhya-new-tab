@@ -16,7 +16,7 @@ angular
     self.clearRuntimeData = clearRuntimeData;
 
     function widgetHasConfig(widgetMd) {
-      return widgetMd.config && ensureWidgetExists(widgetMd.config);
+      return widgetMd.configDirective && ensureWidgetExists(widgetMd.configDirective);
     }
 
     function ensureWidgetExists(widgetName) {
@@ -91,14 +91,15 @@ angular
         widget.data = angular.copy(widgetMd.defaultData);
       }
 
-      widget.config = widgetMd.config;
+      widget.configDirective = widgetMd.configDirective;
       widget.thumbnail = widgetMd.thumbnail;
+      widget.label = widgetMd.label;
 
       return widget;
     }
 
     function clearRuntimeData(widget) {
-      delete widget.config;
+      delete widget.configDirective;
       delete widget.thumbnail;
       delete widget.label;
     }

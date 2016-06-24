@@ -7,5 +7,5 @@ angular
     defaultData: {
       label: 'Label default'
     },
-    config: 'labelWidgetConfig'
+    configDirective: 'labelWidgetConfig'
   });

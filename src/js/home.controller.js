@@ -49,13 +49,15 @@ angular
     }
 
     function showNotification() {
-      NotificationService.showNotification('Teste', function() {
-        console.log('clicked');
-      }, {
-        icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
-        body: "Hey there! You've been notified!",
-      }).then(function(notification) {
-        console.log(notification);
-      });
+      /*$timeout(function() {
+        NotificationService.showNotification('Teste', function() {
+          console.log('clicked');
+        }, {
+          icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
+          body: "Hey there! You've been notified!",
+        }).then(function(notification) {
+          console.log(notification);
+        });
+      }, 2000, false);*/
     }
   }]);
