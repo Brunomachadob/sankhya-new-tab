@@ -4,7 +4,6 @@ angular
       return {
           restrict: 'E',
           templateUrl: 'js/components/widget/wateralarmwidget/config/wateralarmwidgetconfig.tpl.html',
-          controller: 'WaterAlarmWidgetConfigController',
           scope: {
             data: '='
           }

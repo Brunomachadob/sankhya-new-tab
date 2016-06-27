@@ -32,7 +32,7 @@ angular
       }).result
       .then(function (data) {
         if (!angular.equals($scope.widgetMd.data, data, true)) {
-          angular.extend($scope.widgetMd.data, data);
+          $scope.widgetMd.data = data;
           desktopCtrl.widgetDataUpdated($scope.widgetMd);
         }
       });

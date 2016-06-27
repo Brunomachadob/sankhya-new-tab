@@ -1,3 +1,3 @@
-<button class="btn" ng-class="{'btn-primary': ctrl.isAlive, 'btn-danger': !ctrl.isAlive}" ng-click="ctrl.toggleAlarm()">
-  <span ng-bind="ctrl.getBtnText()"></span>
-</button>
+<div class='bubble' data="{{data.ativo ? 'ON' : 'OFF'}}" ng-click="ctrl.toggleAlarm()">
+  <div class="inner" ng-style="{ height: ctrl.waterHeigth + 'px' }"></div>
+</div>

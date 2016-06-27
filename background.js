@@ -26,7 +26,7 @@ chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
 function processWaterAlarmMessage(message, sender, sendResponse) {
   switch (message.type) {
     case 'setup':
-      chrome.alarms.create("waterAlarm", {periodInMinutes: 0.2});
+      chrome.alarms.create("waterAlarm", {periodInMinutes: message.periodInMinutes});
       sendResponse({type:"OK", result: true});
       break;
     case 'clear':
@@ -35,7 +35,7 @@ function processWaterAlarmMessage(message, sender, sendResponse) {
       break;
     case 'active':
       chrome.alarms.get('waterAlarm', function(alarm){
-        sendResponse({type:"OK", result: (alarm) ? true : false});
+        sendResponse({type:"OK", result: alarm});
       });
       return true;
     default:
