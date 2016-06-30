@@ -1,6 +1,6 @@
 # Sankhya New Tab
 
-Extensão de Nova Guia para o Chrome. 
+Extensão de Nova Guia para o Chrome.
 
 ```
 Esta extensão não tem vínculo algum com o Sankhya-W.
