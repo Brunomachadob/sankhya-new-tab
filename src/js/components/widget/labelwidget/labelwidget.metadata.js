@@ -3,5 +3,9 @@ angular
   .value('labelWidget.metadata', {
     name: "labelWidget",
     label: "Label",
-    author: "Bruno Machado"
+    author: "Bruno Machado",
+    defaultData: {
+      label: 'Label default'
+    },
+    configDirective: 'labelWidgetConfig'
   });

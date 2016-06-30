@@ -1,5 +1,5 @@
 angular
-  .module('SnkNewTab', ['ngRoute', 'ngAnimate', 'LocalStorageModule', 'dndLists', 'SnkNewTab.widgets', 'SnkNewTab.templates'])
+  .module('SnkNewTab', ['ngRoute', 'ngAnimate', 'LocalStorageModule', 'dndLists', 'angular-carousel', 'ui.bootstrap', 'SnkNewTab.widgets', 'SnkNewTab.templates'])
   .config(['$routeProvider', 'localStorageServiceProvider', function($routeProvider, localStorageServiceProvider) {
     localStorageServiceProvider
         .setPrefix('SnkNewTab')

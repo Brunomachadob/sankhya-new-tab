@@ -4,11 +4,14 @@
 <div class="row dashboard-container" ng-class="{'edition': desktopCtrl.editionMode}">
   <div class="dashboard-drag-container" ng-class="{'col-sm-8': desktopCtrl.editionMode, 'col-sm-12': !desktopCtrl.editionMode}">
       <div class="row">
-          <div ng-repeat="(zone, list) in desktopCtrl.models.dropzones" class="col-md-12">
+        <ul rn-carousel rn-carousel-index="desktopCtrl.models.dropzoneIndex" rn-swipe-disabled="{{desktopCtrl.editionMode}}" style="height: 600px;">
+          <li ng-repeat="list in desktopCtrl.models.dropzones">
               <div class="dropzone box box-yellow">
                   <div ng-include="'list.html'"></div>
               </div>
-          </div>
+          </li>
+        </ul>
+        <div rn-carousel-indicators ng-if="desktopCtrl.models.dropzones.length > 1" slides="desktopCtrl.models.dropzones" rn-carousel-index="desktopCtrl.models.dropzoneIndex"></div>
       </div>
   </div>
 
@@ -67,7 +70,7 @@
      the above list template to render each container column -->
 <script type="text/ng-template" id="container.html">
     <div class="container-element box box-blue">
-        <h3>Container {{item.id}}</h3>
+        <h3 ng-if="desktopCtrl.editionMode">Container</h3>
         <div class="column" ng-repeat="list in item.columns" ng-include="'list.html'"></div>
         <div class="clearfix"></div>
     </div>

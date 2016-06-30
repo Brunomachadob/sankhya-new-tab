@@ -1,11 +1,12 @@
 angular
   .module('SnkNewTab.widgets')
-  .directive('labelWidget', [function() {
+  .directive('googleSearchWidget', [function() {
       return {
           restrict: 'E',
-          templateUrl: 'js/components/widget/labelwidget/labelwidget.tpl.html',
+          templateUrl: 'js/components/widget/googlesearchwidget/googlesearchwidget.tpl.html',
           scope: {
             data: '='
           }
       };
+
    }]);
