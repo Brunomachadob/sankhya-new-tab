@@ -116,7 +116,16 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-html2js');
 
-  grunt.registerTask('test', ['jshint']);
+  grunt.registerTask('default', ['build', 'watch']);
 
-  grunt.registerTask('default', ['clean:before','jshint', 'html2js', 'concat', 'less', 'uglify', /*'clean:after',*/ 'copy', 'watch']);
+  grunt.registerTask('build', ['clean:before','jshint', 'html2js', 'concat', 'less', 'uglify', 'clean:after', 'copy']);
+
+  grunt.task.registerTask('test', 'Task for test the application', function() {
+    grunt.log.write('Building for test');
+    grunt.task.run(['build']);
+    grunt.log.write('....').ok();
+
+    grunt.log.writeln("Testing");
+    return 0;
+  });
 };
