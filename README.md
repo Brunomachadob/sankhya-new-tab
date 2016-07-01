@@ -10,6 +10,9 @@ A idéia é disponibilizar uma nova guia para os colaboradores da Sankhya,
 onde qualquer um pode criar widgets e depois utilizá-los.
 Os widgets podem ser relógios, apps de TODO, notas, ou até buscar informações quaisquer do próprio Sankhya-W.
 
+### Status ###
+[![CircleCI](https://circleci.com/gh/Brunomachadob/sankhya-new-tab.svg?style=svg)](https://circleci.com/gh/Brunomachadob/sankhya-new-tab)
+
 ### Componentes já desenvolvidos ###
 
 > Desktop
