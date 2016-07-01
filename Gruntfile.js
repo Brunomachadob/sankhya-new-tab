@@ -120,11 +120,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', ['clean:before','jshint', 'html2js', 'concat', 'less', 'uglify', 'clean:after', 'copy']);
 
-  grunt.task.registerTask('test', 'Task for test the application', function() {
-    grunt.log.write('Building for test');
-    grunt.task.run(['build']);
-    grunt.log.write('....').ok();
+  grunt.task.registerTask('launchTest', 'Bootstrap the test environment', function() {
+    grunt.task.run(['build', 'test']);
+  });
 
+  grunt.task.registerTask('test', 'Task for test the application', function() {
     grunt.log.writeln("Testing");
     return 0;
   });

@@ -5,7 +5,7 @@
   "description": "Extensão de Nova Guia para o Chrome.",
   "main": "index.html",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt launchTest"
   },
   "repository": {
     "type": "git",
