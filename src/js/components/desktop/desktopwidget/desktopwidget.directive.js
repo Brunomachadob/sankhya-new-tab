@@ -35,7 +35,7 @@ angular
                 WidgetService.ensureWidgetExists(widgetName);
 
                 widgetName = AngularUtils.toDashCase(widgetName);
-                return AngularUtils.createDirective(widgetName, {'data': 'widgetMd.data'}, scope.$new());
+                return AngularUtils.createDirective(widgetName, {'widget-md': 'widgetMd', 'data': 'widgetMd.data'}, scope.$new());
               } catch(error) {
                 scope.error = error;
                 return AngularUtils.createDirective('desktopWidgetError', {'data': 'error'}, scope.$new());

@@ -1,6 +1,6 @@
 angular
   .module('SnkNewTab.widgets')
-  .controller('WaterAlarmWidgetController', ['$scope', '$interval', '$element', 'AngularUtils', function($scope, $interval, $element, AngularUtils) {
+  .controller('WaterAlarmWidgetController', ['$scope', '$interval', '$element', 'AngularUtils', 'DesktopInstance', function($scope, $interval, $element, AngularUtils, DesktopInstance) {
     var self = this;
 
     self.toggleAlarm = toggleAlarm;
@@ -40,11 +40,11 @@ angular
           self.waterHeigth = waterHeigth;
           AngularUtils.digest($scope);
       }
-
     }
 
     function toggleAlarm() {
       ($scope.data.ativo ? cancelAlarm : setupAlarm)();
+      DesktopInstance.widgetDataUpdated($scope.widgetMd);
     }
 
     function setupAlarm() {

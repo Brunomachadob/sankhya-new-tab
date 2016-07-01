@@ -8,7 +8,7 @@ var _alarmProcessors = {
 
 chrome.alarms.onAlarm.addListener(function(alarm) {
   if (_alarmProcessors[alarm.name]) {
-    processWaterAlarmFired(alarm);
+    _alarmProcessors[alarm.name](alarm);
   }
 });
 

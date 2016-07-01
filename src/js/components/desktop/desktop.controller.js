@@ -1,7 +1,9 @@
 angular
   .module('SnkNewTab')
-  .controller('DesktopController', ['$scope', 'WidgetService', function($scope, WidgetService) {
+  .controller('DesktopController', ['$scope', 'WidgetService', 'DesktopService', function($scope, WidgetService, DesktopService) {
     var self = this;
+
+    DesktopService.instance(self);
 
     self.editionMode = false;
     self.desktopChanged = false;

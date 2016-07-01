@@ -7,7 +7,8 @@ angular
           controller: 'WaterAlarmWidgetController',
           controllerAs: 'ctrl',
           scope: {
-            data: '='
+            data: '=',
+            widgetMd: '='
           }
       };
    }]);
